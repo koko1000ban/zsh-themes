@@ -20,8 +20,11 @@
 # Thanks to Steve Losh: http://stevelosh.com/blog/2009/03/candy-colored-terminal/
 
 # The prompt
+function rbenv_version() {
+    echo -n "${$(rbenv version)%% *}"
+}
 
-PROMPT='%{$fg[magenta]%}[%c]%{$fg[red]%})[r:`~/.rvm/bin/rvm-prompt`] %{$reset_color%}'
+PROMPT='%{$fg[magenta]%}[%c]%{$fg[red]%})[r:$(rbenv_version)] %{$reset_color%}'
 
 # The right-hand prompt
 
